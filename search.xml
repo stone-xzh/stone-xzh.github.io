@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>距离检测</title>
+      <link href="/2024/09/11/%E8%B7%9D%E7%A6%BB%E6%A3%80%E6%B5%8B/"/>
+      <url>/2024/09/11/%E8%B7%9D%E7%A6%BB%E6%A3%80%E6%B5%8B/</url>
+      
+        <content type="html"><![CDATA[<h5 id></h5><h5 id="大概思路：">大概思路：</h5><h5 id="1-根据第一张图获取焦距的大小">1.根据第一张图获取焦距的大小</h5><h5 id="2-标记圆环的位置，算出距离并以文字输出">2.标记圆环的位置，算出距离并以文字输出</h5><h5 id="相似三角形：物体的实际宽度W，距离相机的位置D，拍照获取图片的像素宽度P（图像中圆环的宽度），有公式F-P-D-W">相似三角形：物体的实际宽度W，距离相机的位置D，拍照获取图片的像素宽度P（图像中圆环的宽度），有公式F=(P*D)/W</h5><h5 id="1-建立框架，需从文件中读取图像，并返回一个文件夹">1.建立框架，需从文件中读取图像，并返回一个文件夹</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">os.path.join() <span class="comment">#用于拼接文件路径，</span></span><br><span class="line"><span class="comment"># 如果没有&#x27;/&#x27;开头的参数</span></span><br><span class="line">os.path.join(<span class="string">&#x27;path&#x27;</span>, <span class="string">&#x27;abc&#x27;</span>,<span class="string">&#x27;xyz&#x27;</span>)</span><br><span class="line"><span class="comment"># 输出：path\abc\xyz</span></span><br><span class="line"><span class="comment">#如果存在‘/’开始的参数从最后一个以‘/’开头的参数开始拼接之前的全都舍弃</span></span><br><span class="line">os.path(<span class="string">&#x27;aaa&#x27;</span>,<span class="string">&#x27;/bbb&#x27;</span>,<span class="string">&#x27;ccc&#x27;</span>)</span><br><span class="line"><span class="comment"># 输出：/bbb\ccc</span></span><br></pre></td></tr></table></figure><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">file = os.listdir(input_folder_path) <span class="comment">#可以返回指定文件夹下文件的列表通常是无序的可以采用内置函数sorted（）进行排序</span></span><br><span class="line">file.sort(key = <span class="keyword">lambda</span> x : <span class="built_in">int</span>(x[:-<span class="number">4</span>]))</span><br><span class="line"><span class="comment"># lamba函数作用：对输入的参数x进行处理</span></span><br><span class="line"><span class="comment"># int(x[:-4])表示去除字符串最后四个字符的部分并转换为整数，TZ2_No1.png ~ TZ2_No1 ~ 再转换为整数排序</span></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>地雷识别</title>
       <link href="/2024/09/07/%E5%9C%B0%E9%9B%B7%E8%AF%86%E5%88%AB/"/>
       <url>/2024/09/07/%E5%9C%B0%E9%9B%B7%E8%AF%86%E5%88%AB/</url>
